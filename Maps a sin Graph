@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class sinFunction {
+
+	public static void main(String[] args) {
+		double calculatedValue=0;
+		int factorial=1;
+		Scanner reader= new Scanner(System.in);
+		System.out.println("Enter sin(x) value, enter (x)");
+		int sinXValue=reader.nextInt();
+		
+		for (int count=0;count<=20;count++)
+		{
+			while (2*count+1>0)
+			{
+				factorial=(2*count+1)*factorial;
+						count--;
+			}
+			
+			double formulaValue=((-1^count)*Math.pow(sinXValue,(2*count+1))/factorial);
+					calculatedValue=calculatedValue+formulaValue;
+		}
+		
+		System.out.println(calculatedValue);
+	}
+	
+}
+
+	
+
