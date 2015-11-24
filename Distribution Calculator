@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class WeightedAverageCalculator {
+	public static void main(String[] args) {
+		//Declaring needed Carried over Values
+		double weightedAverage=0;
+		double weightedMarkValue=0;
+		//Getting Scanner
+		Scanner reader= new Scanner (System.in);
+		//Requesting user input
+			System.out.println("How many Marks do you have to Enter");
+			int numberOfMarks= reader.nextInt();
+			//runs while the user still has mark input 
+			int counter=numberOfMarks;
+			while (counter>0)
+			{
+				System.out.println("What is the mark?(ie, 95.3)");
+				double markValue=reader.nextDouble();
+				System.out.println("How many people acheived this mark?");
+				int numberOfPeopleSameMark=reader.nextInt();
+				//Calculates total Marks achieved
+				weightedMarkValue=weightedMarkValue+markValue*numberOfPeopleSameMark;
+				counter--;
+			}
+			//Calculates Weighted Mark Average
+			weightedAverage=(weightedMarkValue/numberOfMarks);
+			System.out.println("Your Weighted Average was :"+weightedAverage);		
+	}
+
+}
