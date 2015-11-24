@@ -1,0 +1,45 @@
+import java.util.Scanner;
+public class DayOfTheYear {	
+	public static void main(String[] args) {
+		Scanner reader= new Scanner(System.in);
+		System.out.println("Enter the Day of the Year");
+		int dayOfTheYear=reader.nextInt();
+		while (dayOfTheYear>366 ||dayOfTheYear<=0)
+		{
+			System.out.println("Invalid Date, Please Reenter");
+			dayOfTheYear=reader.nextInt();
+		}
+		System.out.println ("Is this a leap year? (yes/no)");
+		String year=reader.next();
+		
+		int month=0;
+		int monthb=1;
+		int monthdays=31;
+		int dayLeft=0;
+		int n=dayOfTheYear;
+		
+		while(n-monthdays>0){
+			n-=monthdays;
+			if (month==1)
+			{
+				monthdays=28;
+				if(year=="yes")
+				{
+					monthdays++;
+				}
+			}
+			else if (monthb<7)
+			{
+				monthdays=31-monthb%2;
+			}
+			else
+			{
+				monthdays=30+monthb%2;
+			}
+			monthb++;
+		}
+		System.out.println(monthb);
+		System.out.println(monthdays);
+		
+	}	
+	}
