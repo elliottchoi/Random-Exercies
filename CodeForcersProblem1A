@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class TheatreSquare {
+
+    public static void main(String[] args) {
+        long n;
+        long m;
+        long a;
+        Scanner sc = new Scanner(System.in);
+        n = sc.nextLong();    // Read data as integer
+        m = sc.nextLong();
+        a = sc.nextLong();
+        Long numberRow=m/a; 
+        Long numberColumn=n/a;
+        if (m%a!=0)
+        	numberRow++;
+        if (n%a!=0)
+        	numberColumn++;
+        Long totalStone=numberRow*numberColumn; 
+        System.out.print(totalStone);
+        }
+}
+
+		
