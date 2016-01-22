@@ -1,0 +1,55 @@
+import java.util.ArrayList;
+
+public class ArrayLists {
+
+	public static void main(String[] args) {
+		// Basic 2D array
+		String[] games = { "Risk", "Monopoly", "Cards Against Humanity" };
+		// Arrays, like strings, are based with index 0
+		System.out.println(games[2]);
+
+		/// ArrayList of size 5 but index 0-4
+		ArrayList<String> fruits = new ArrayList<String>(5);
+		fruits.add("Apples");
+		fruits.add("Oranges");
+		fruits.add("Peaches");
+		fruits.add("Kiwis");
+		// Index will be One, everything else will shift
+		fruits.add(1, "Bananas");
+
+		// Size is 5, adjusts to filled index not capacity
+		for (int i = 0; i < fruits.size(); i++) {
+			System.out.println(fruits.get(i));
+		}
+		// Not add, but change value at index
+		fruits.set(1, "grapes");
+		// Cannot access out of size
+		// fruits.set(6, "fries");
+
+		// ArrayList Methods
+		// Default Capacity of 10
+		ArrayList<String> moreFruits = new ArrayList<String>();
+		moreFruits.add("apple");
+		moreFruits.add("peach");
+		moreFruits.add("banana");
+		moreFruits.add("kiwi");
+		System.out.println(moreFruits);
+		
+		//Adding to fruits
+		moreFruits.add(1,"grapes");
+		System.out.println(moreFruits);
+		
+		//Inclusive 1, exclusive 4
+		System.out.println(moreFruits.subList(1, 4));
+		
+		//Index methods apply
+		System.out.println(moreFruits);
+		int index=moreFruits.indexOf("apple");
+		System.out.println(index);
+		
+		//Copy the Method
+		ArrayList <String> newList = new ArrayList <String> (moreFruits);
+		System.out.println(newList); 
+		
+	}
+}
