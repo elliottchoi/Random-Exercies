@@ -25,6 +25,39 @@ public class Stringbuilder {
 		studyTwo.append("Engineering");
 		System.out.println(studyTwo);
 		
+		//StringBuilder strBuild = new StringBuilder("Comic");
+		//strBuild.setCharAt(5, 's')
+		//Capacity of the strBuild=5+(default of 16)
+		//Command above throws out of bounds, to add, you must append 
+		StringBuilder newWord= new StringBuilder ("Comil");
+		newWord.setCharAt(4,'c');
+		newWord.append('s');
+		System.out.println(newWord);
+		
+		//Delete Method
+		StringBuilder sequence = new StringBuilder("ABCDEFG");
+		sequence.deleteCharAt(3);
+		//Deletes 'D'
+		System.out.println(sequence);
+		
+		//Multiple delete
+		StringBuilder sequenceTwo = new StringBuilder("ABCDEFG");
+		//Beginning is inclusive, end is exclusive 
+		sequenceTwo.delete(1, 3);
+		System.out.println(sequenceTwo);
+		
+		//Inserting Words
+		StringBuilder concentration= new StringBuilder ("Science");
+		concentration.insert(0, "Computer ");
+		System.out.println(concentration);
+		
+		//Checking Capacity
+		StringBuilder strBuild = new StringBuilder();
+		//Default is 16
+		System.out.println(strBuild.capacity());
+		strBuild.ensureCapacity(20);
+		//Needs a min of 20, so new capacity= 2(old capacity+1)
+		System.out.println(strBuild.capacity());
 	}
 
 }
