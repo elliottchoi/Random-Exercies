@@ -1,0 +1,30 @@
+
+public class Stringbuilder {
+
+	public static void main(String[] args) {
+		//Inefficient Method
+		String name="elizabeth";
+		//Changes first character (e) to E, and attaches 'lizabeth'
+		name=Character.toUpperCase(name.charAt(0))+name.substring(1);
+		System.out.println(name);
+		
+		//String Builders Method
+		StringBuilder nameTwo=new StringBuilder ("elizabeth");
+		//Index of value (0) and then method applied (character.toUpperCase
+		nameTwo.setCharAt(0, Character.toUpperCase(nameTwo.charAt(0)));
+		System.out.println(nameTwo);
+		
+		//Normal method adding to string 
+		String study="Software";
+		study+="Engineering";
+		System.out.println(study);
+		
+		//String Builders
+		StringBuilder studyTwo= new StringBuilder ("Software");
+		//Append is more efficient than +=
+		studyTwo.append("Engineering");
+		System.out.println(studyTwo);
+		
+	}
+
+}
