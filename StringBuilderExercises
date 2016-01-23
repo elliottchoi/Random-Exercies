@@ -1,0 +1,63 @@
+
+public class StringBuilderExercises {
+
+	public static void main(String[] args) {
+		// Problem One
+		StringBuilder text = new StringBuilder("ABCDEFG");
+		System.out.println(text);
+		// Deletes DE
+		text.delete(3, 5);
+		System.out.println(text);
+		text.insert(3, "DE");
+		System.out.println(text);
+
+		// at E, puts in XYZ
+		text.insert(4, "XYZ");
+		System.out.println(text);
+		text.delete(4, 8);
+		text.insert(4, "E");
+		System.out.println(text);
+
+		// replaces C to F with XYZ
+		text.replace(2, 7, "XYZ");
+		System.out.println(text);
+		text.replace(2, 5, "CDEFG");
+		System.out.println(text);
+
+		// Changes B to X
+		text.setCharAt(1, 'X');
+		// Deletes C
+		text.deleteCharAt(2);
+		// Sets F to Y
+		text.setCharAt(4, 'Y');
+		// Flips the Text
+		text.reverse();
+		System.out.println(text);
+		text.reverse();
+		text.setCharAt(4, 'F');
+		text.insert(2, 'C');
+		text.setCharAt(1, 'B');
+		System.out.println(text);
+
+		// Problem Two
+		StringBuilder strBuild = new StringBuilder(10);
+		//Capacity has been set at 10, but the length is 0, all null
+		System.out.println(strBuild.length() + " " + strBuild.capacity());
+		
+		//Problem Three
+		String sentence= "He wore a blue shirt and black pants.";
+		System.out.println(sentence);
+		String newStr = searchAndReplace(sentence, "blue", "black");
+		System.out.println (newStr);
+
+	}
+		
+	private static String searchAndReplace(String sentence, String search, String replace) {
+		StringBuilder newSentence= new StringBuilder (sentence);
+		while (newSentence.indexOf(search)!=-1)
+		{
+			newSentence.replace(newSentence.indexOf(search), replace.length()+newSentence.indexOf(search)-1, replace);
+		}
+		return newSentence.toString();
+	}
+}
