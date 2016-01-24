@@ -1,5 +1,5 @@
-
-public class StringBuilderExercises {
+import java.util.Scanner;
+public class ArrayListExercises {
 
 	public static void main(String[] args) {
 		// Problem One
@@ -49,9 +49,25 @@ public class StringBuilderExercises {
 		System.out.println(sentence);
 		String newStr = searchAndReplace(sentence, "blue", "black");
 		System.out.println (newStr);
+		
+		//Problem Four
+		Scanner keyboard= new Scanner(System.in);
+		String comparisonLine="abcdefghijklmnopqrstuvwxyz";
+		String conversionLine="22233344455566677778889999";
+		StringBuilder convertedWord= new StringBuilder ();
+		System.out.println ("What is the word you want to convert?");
+		StringBuilder wordConversion= new StringBuilder(keyboard.next().toLowerCase());
+		for (int index=0;index<wordConversion.length();index++)
+		{
+			//Gets integer value of the character
+			convertedWord.append(conversionLine.charAt((comparisonLine.indexOf(wordConversion.charAt(index)))));
+		}
+		System.out.println(convertedWord);
+		
+		
 
 	}
-		
+	//Method for Problem Three
 	private static String searchAndReplace(String sentence, String search, String replace) {
 		StringBuilder newSentence= new StringBuilder (sentence);
 		while (newSentence.indexOf(search)!=-1)
