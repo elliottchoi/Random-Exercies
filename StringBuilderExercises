@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class ArrayListExercises {
 
 	public static void main(String[] args) {
@@ -41,39 +42,53 @@ public class ArrayListExercises {
 
 		// Problem Two
 		StringBuilder strBuild = new StringBuilder(10);
-		//Capacity has been set at 10, but the length is 0, all null
+		// Capacity has been set at 10, but the length is 0, all null
 		System.out.println(strBuild.length() + " " + strBuild.capacity());
-		
-		//Problem Three
-		String sentence= "He wore a blue shirt and black pants.";
+
+		// Problem Three
+		String sentence = "He wore a blue shirt and black pants.";
 		System.out.println(sentence);
 		String newStr = searchAndReplace(sentence, "blue", "black");
-		System.out.println (newStr);
-		
-		//Problem Four
-		Scanner keyboard= new Scanner(System.in);
-		String comparisonLine="abcdefghijklmnopqrstuvwxyz";
-		String conversionLine="22233344455566677778889999";
-		StringBuilder convertedWord= new StringBuilder ();
-		System.out.println ("What is the word you want to convert?");
-		StringBuilder wordConversion= new StringBuilder(keyboard.next().toLowerCase());
-		for (int index=0;index<wordConversion.length();index++)
-		{
-			//Gets integer value of the character
+		System.out.println(newStr);
+
+		// Problem Four
+		Scanner keyboard = new Scanner(System.in);
+		String comparisonLine = "abcdefghijklmnopqrstuvwxyz";
+		String conversionLine = "22233344455566677778889999";
+		StringBuilder convertedWord = new StringBuilder();
+		System.out.println("What is the word you want to convert?");
+		StringBuilder wordConversion = new StringBuilder(keyboard.next().toLowerCase());
+		for (int index = 0; index < wordConversion.length(); index++) {
+			// Gets integer value of the character
 			convertedWord.append(conversionLine.charAt((comparisonLine.indexOf(wordConversion.charAt(index)))));
 		}
 		System.out.println(convertedWord);
-		
-		
+
+		// Problem Five
+		System.out.println("What is the Word you want to encode?");
+		String word = (keyboard.next().toUpperCase());
+		String encodedWord = encodeWord(word);
+		System.out.println(encodedWord);
 
 	}
-	//Method for Problem Three
+
+	// Method for Problem Three
 	private static String searchAndReplace(String sentence, String search, String replace) {
-		StringBuilder newSentence= new StringBuilder (sentence);
-		while (newSentence.indexOf(search)!=-1)
-		{
-			newSentence.replace(newSentence.indexOf(search), replace.length()+newSentence.indexOf(search)-1, replace);
+		StringBuilder newSentence = new StringBuilder(sentence);
+		while (newSentence.indexOf(search) != -1) {
+			newSentence.replace(newSentence.indexOf(search), replace.length() + newSentence.indexOf(search) - 1,
+					replace);
 		}
 		return newSentence.toString();
+	}
+
+	// Method for Problem Five
+	private static String encodeWord(String word) {
+		StringBuilder encodedWord = new StringBuilder();
+		String codeLine = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		for (int index = 0; index < word.length(); index++) {
+			encodedWord.append(codeLine.indexOf(word.charAt(index)) + "-");
+		}
+		return encodedWord.toString();
 	}
 }
